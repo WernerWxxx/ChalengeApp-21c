@@ -1,4 +1,7 @@
 ﻿using static ChalengeApp_21c.TimePersonBase;
+using System;
+using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 
 namespace ChalengeApp_21c
 {
@@ -6,15 +9,14 @@ namespace ChalengeApp_21c
     {
         public override event GradeAddedDelegate GradeAdded;
 
-        private List<float> grades = new List<float>();
-        public object Statistics;
-        //internal string Name;
-        //internal string Surname;
+        public List<float> grades = new List<float>();
+        //internal int Grade;
 
         public TimePersonInMemory(string name, string surname)
            : base(name, surname)
         {
         }
+
         public override void AddGrade(float grade)
         {
             if (grade >= 0 && grade <= 1000)
@@ -28,37 +30,10 @@ namespace ChalengeApp_21c
             }
             else
             {
-                Console.WriteLine(" Zbyt wysoka wartość ");
+              throw new Exception($"Invalid argument: {nameof(grade)}. Only grades from 1 to 1000 are allowed!");
+      
             }
         }
-
-        public override void AddGrade(double grade)
-        {
-            float gradeAsFloat = (float)grade;
-            this.AddGrade(gradeAsFloat);
-        }
-
-        public override void AddGrade(long grade)
-        {
-            float gradeAsFloat = (float)grade;
-            this.AddGrade(gradeAsFloat);
-        }
-
-        public override void AddGrade(int grade)
-        {
-            float gradeAsFloat = grade;
-            this.AddGrade(gradeAsFloat);
-        }
-
-        public override void AddGrade(string grade)
-        {
-            if (float.TryParse(grade, out float result))
-            {
-                AddGrade(result);
-            }
-        }
-
-
         public override Statistics GetStatistics()
         {
             var statistics = new Statistics();
@@ -69,11 +44,6 @@ namespace ChalengeApp_21c
                 statistics.AddGrade(grade);
             }
             return statistics;
-        }
-
-        public override void AddGrade(char grade)
-        {
-            throw new NotImplementedException();
         }
     }
 }

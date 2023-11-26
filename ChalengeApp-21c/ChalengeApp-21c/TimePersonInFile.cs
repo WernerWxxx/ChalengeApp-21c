@@ -22,39 +22,15 @@ namespace ChalengeApp_21c
                     writer.WriteLine(grade);
                 }
 
-                if (GradeAdded != null)//
+                if (GradeAdded != null)
                 {
                     GradeAdded(this, new EventArgs());
                 }
             }
             else
             {
-                Console.WriteLine(" Zbyt wysoka wartość ");
+                throw new Exception($"Invalid argument: {nameof(grade)} Only grades from 1 to 1000 are allowed!");
             }
-        }
-        public override void AddGrade(string grade)
-        {
-            if (float.TryParse(grade, out float result))
-            {
-                AddGrade(result);
-            }
-        }
-
-        public override void AddGrade(double grade)
-        {
-            float gradeAsFloat = (float)grade;
-            this.AddGrade(gradeAsFloat);
-        }
-        public override void AddGrade(long grade)
-        {
-            float gradeAsFloat = (float)grade;
-            this.AddGrade(gradeAsFloat);
-        }
-
-        public override void AddGrade(int grade)
-        {
-            float gradeAsFloat = (float)grade;
-            this.AddGrade(gradeAsFloat);
         }
 
         public override Statistics GetStatistics()
@@ -83,11 +59,6 @@ namespace ChalengeApp_21c
                 }
             }
             return statistics;
-        }
-
-        public override void AddGrade(char grade)
-        {
-            throw new NotImplementedException();
         }
     }
 }

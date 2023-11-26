@@ -52,5 +52,19 @@ namespace TimePersonTest
             // assert
             Assert.AreEqual(165, statistics.Average);
         }
+
+        [Test]  // 4
+        public void AverageLetterTimeTest()
+        {
+            // arrange
+            var employee = new TimePersonInMemory("Wxxx", "Wxxx");
+            employee.AddGrade(400);
+
+            // act
+            var statistics = employee.GetStatistics();
+
+            // assert
+            Assert.AreEqual(400, statistics.Average);
+        }
     }
 }

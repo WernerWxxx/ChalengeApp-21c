@@ -23,17 +23,17 @@
             {
                 switch (this.Average)
                 {
-                    case var average when average >= 80:
+                    case var average when average >= 800:
 
                         return 'A';
 
-                    case var average when average >= 60:
+                    case var average when average >= 600:
                         return 'B';
 
-                    case var average when average >= 40:
+                    case var average when average >= 400:
                         return 'C';
 
-                    case var average when average >= 20:
+                    case var average when average >= 200:
                         return 'D';
 
                     default:

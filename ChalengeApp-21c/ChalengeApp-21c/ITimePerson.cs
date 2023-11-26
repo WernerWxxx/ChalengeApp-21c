@@ -8,9 +8,9 @@ namespace ChalengeApp_21c
 
         string Surname { get; }
 
-        //int Age { get; }//
-
         void AddGrade(float grade);
+
+        void Calculation();
 
         void AddGrade(double grade);
 
