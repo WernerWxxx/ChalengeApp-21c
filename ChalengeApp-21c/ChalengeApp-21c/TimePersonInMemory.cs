@@ -10,7 +10,6 @@ namespace ChalengeApp_21c
         public override event GradeAddedDelegate GradeAdded;
 
         public List<float> grades = new List<float>();
-        //internal int Grade;
 
         public TimePersonInMemory(string name, string surname)
            : base(name, surname)
