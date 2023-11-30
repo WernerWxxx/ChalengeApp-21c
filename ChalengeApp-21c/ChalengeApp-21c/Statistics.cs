@@ -1,5 +1,5 @@
 ﻿namespace ChalengeApp_21c
-{
+{   //
     public class Statistics
     {
         public float Min { get; set; }

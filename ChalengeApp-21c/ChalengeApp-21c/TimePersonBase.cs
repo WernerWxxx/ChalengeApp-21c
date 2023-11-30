@@ -1,10 +1,4 @@
-﻿using System.Diagnostics;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Security.Cryptography.X509Certificates;
-
-namespace ChalengeApp_21c
+﻿namespace ChalengeApp_21c
 {
     public abstract class TimePersonBase : ITimePerson
     {
@@ -20,8 +14,8 @@ namespace ChalengeApp_21c
         public string Name { get; private set; }
         public string Surname { get; private set; }
 
-         public virtual void Calculation()
-         {
+        public virtual void Calculation()
+        {
             Statistics statistics = GetStatistics();
 
             Console.WriteLine(" Minimalny czas Wykonywanej Pracy lub Czynności w czasie dnia - Czas podany w minutach");
@@ -32,7 +26,7 @@ namespace ChalengeApp_21c
             Console.WriteLine(statistics.Average);
             Console.WriteLine(" Symboliczny Średni czas Wykonywania Prac lub Czynności w czasie dnia - Czas podany w postaci litery");
             Console.WriteLine(statistics.AverageLetter);
-         }
+        }
 
         public abstract void AddGrade(float grade);
 

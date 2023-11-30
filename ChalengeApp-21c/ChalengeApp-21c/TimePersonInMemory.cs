@@ -1,9 +1,4 @@
-﻿using static ChalengeApp_21c.TimePersonBase;
-using System;
-using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
-
-namespace ChalengeApp_21c
+﻿namespace ChalengeApp_21c
 {
     public class TimePersonInMemory : TimePersonBase
     {
@@ -29,8 +24,8 @@ namespace ChalengeApp_21c
             }
             else
             {
-              throw new Exception($"Invalid argument: {nameof(grade)}. Only grades from 1 to 1000 are allowed!");
-      
+                throw new Exception($"Invalid argument: {nameof(grade)}. Only grades from 1 to 1000 are allowed!");
+
             }
         }
         public override Statistics GetStatistics()

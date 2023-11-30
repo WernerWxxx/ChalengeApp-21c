@@ -24,5 +24,6 @@ namespace ChalengeApp_21c
 
         event GradeAddedDelegate GradeAdded;
         Statistics GetStatistics();
+        
     }
 }

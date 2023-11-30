@@ -4,7 +4,7 @@ namespace TimePersonTest
 {
     public class Tests
     {
-        [Test]  //1//
+        [Test]  //1
 
         public void MaxTimeTest()
         {

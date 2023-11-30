@@ -1,10 +1,4 @@
-﻿using ChalengeApp_21c;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
-
-namespace ChalengeApp_21c
+﻿namespace ChalengeApp_21c
 {
     internal class Program
     {
@@ -78,14 +72,14 @@ namespace ChalengeApp_21c
 
             static void TimePersonInFile()
             {
-               var employee = new TimePersonInFile("Wxxx", "Wxxx");
-               void EmployeeGradeAdded(object sender, EventArgs args)
-               {
-                  Console.WriteLine("Dodano nową wartość - Zadziałał event");
-               }
-               employee.GradeAdded += EmployeeGradeAdded;
+                var employee = new TimePersonInFile("Wxxx", "Wxxx");
+                void EmployeeGradeAdded(object sender, EventArgs args)
+                {
+                    Console.WriteLine("Dodano nową wartość - Zadziałał event");
+                }
+                employee.GradeAdded += EmployeeGradeAdded;
 
-               AddGrade(employee);
+                AddGrade(employee);
 
                 Console.WriteLine("Osoba : " + employee.Name + " " + employee.Surname);
 
@@ -114,7 +108,7 @@ namespace ChalengeApp_21c
                         Console.WriteLine($"Exception catched: {e.Message}");
                     }
                 }
-            }   
+            }
         }
 
     }
